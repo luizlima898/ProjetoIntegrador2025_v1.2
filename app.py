@@ -244,6 +244,9 @@ def get_produto(id):
     # Pega os dados do produto no banco
     produto = supabase.table('produto').select('id, descricao, quantidade, fornecedor_id, local').eq('id', id).execute().data[0]
     return jsonify(produto)  # Retorna os dados em JSON
+    
+# Rota para pesquisar dados de um produto
+
 
 # Inicia o aplicativo localmente (removido para o Vercel em produção)
 if __name__ == '__main__':
